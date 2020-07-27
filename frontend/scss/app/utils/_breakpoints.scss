@@ -1,0 +1,113 @@
+$mobile-min: 320px;
+$mobile-max: 768px;
+$desktop-min: 769px;
+$desktop-mid: 1366px;
+$desktop-large: 1920px;
+
+@function rm($number) {
+  $val: $number * 100 / 320;
+
+  @return $val + vw;
+}
+
+@function rt($number) {
+  $val: $number * 100 / 768;
+
+  @return $val + vw;
+}
+
+@function rd($number) {
+  $val: $number * 100 / 1920;
+
+  @return $val + vw;
+}
+
+@function rdm($number) {
+  $val: $number * 100 / 1366;
+
+  @return $val + vw;
+}
+
+/* 
+----------- MOBILE MQs -----------------------------------------
+
+*/
+
+@mixin mobile($media: regular) {
+  @if $media == regular {
+    @media only screen and (max-width: $mobile-max) {
+      @content;
+    }
+  }
+  @if $media == legacy {
+    @media only screen and (max-width: $mobile-min) {
+      @content;
+    }
+  }
+  @if $media == landscape {
+    @media only screen and (max-width: $mobile-max) and (orientation: landscape) {
+      @content;
+    }
+  }
+  @if $media == legacy-landscape {
+    @media only screen and (min-device-width: $mobile-min) and (max-device-width: 667px) and (orientation: landscape) {
+      @content;
+    }
+  }
+}
+
+/*
+----------- TABLET MQs -----------------------------------------
+
+*/
+
+@mixin tablet($media: regular) {
+  @if $media == regular {
+    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+      @content;
+    }
+  }
+  @if $media == landscape {
+    @media only screen and (max-width: $tablet-max) and (orientation: landscape) {
+      @content;
+    }
+  }
+  @if $media == portrait {
+    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) and (orientation: portrait) {
+      @content;
+    }
+  }
+}
+
+/*
+----------- DESKTOP MQs -----------------------------------------
+
+*/
+@mixin desktop($media: regular) {
+  @if $media == regular {
+    @media only screen and (min-width: $desktop-min) {
+      @content;
+    }
+  }
+  @if $media == medium {
+    @media only screen and (min-width: $desktop-min) and (max-width: $desktop-mid) {
+      @content;
+    }
+  }
+  @if $media == large {
+    @media only screen and (min-width: $desktop-large) {
+      @content;
+    }
+  }
+  @if $media == short {
+    @media only screen and (min-width: $desktop-min) and (max-height: 690px) {
+      @content;
+    }
+  }
+}
+
+@mixin portrait() {
+  @media only screen and (min-width: $desktop-min) and (orientation: portrait) {
+    @content;
+  }
+}

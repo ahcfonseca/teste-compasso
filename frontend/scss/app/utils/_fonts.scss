@@ -1,0 +1,18 @@
+$regular: "MarkPro";
+$bold: "MarkPro-Bold";
+
+@font-face {
+  font-family: "MarkPro-Bold";
+  src: url("../fonts/MarkPro-Bold.woff2") format("woff2"),
+    url("../fonts/MarkPro-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MarkPro";
+  src: url("../fonts/MarkPro.woff2") format("woff2"),
+    url("../fonts/MarkPro.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

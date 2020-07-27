@@ -1,0 +1,12 @@
+//utilities
+@import "utils/reset.scss";
+@import "utils/colors.scss";
+@import "utils/mixins.scss";
+@import "utils/fonts.scss";
+@import "utils/breakpoints.scss";
+
+//global styles
+@import "globals/globals.scss";
+
+//pages styles
+@import "pages/__all.scss";

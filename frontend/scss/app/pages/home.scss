@@ -1,0 +1,418 @@
+.home {
+  background-color: $white;
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px 40px;
+
+    .calendar-widget {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 360px;
+
+      .time {
+        font-size: 144px;
+        line-height: 183px;
+        text-align: center;
+        color: $dark-grey;
+        font-family: $bold;
+        width: 100%;
+        margin-bottom: -40px;
+      }
+
+      .calendar-text {
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        font-family: $regular;
+        color: $dark-grey;
+        width: 100%;
+      }
+    }
+
+    .weather-widget {
+      .location {
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        font-family: $regular;
+        color: $dark-grey;
+        margin-left: auto;
+      }
+
+      .weather-details {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: auto;
+        margin-top: 12px;
+
+        .temperature {
+          font-size: 48px;
+          color: $dark-grey;
+          font-family: $bold;
+          line-height: 1;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .main {
+    position: relative;
+    min-height: calc(100vh - 211px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 50px 134px;
+
+    @media screen and (max-width: 1620px) {
+      padding: 50px;
+    }
+
+    .home-logo {
+      position: absolute;
+      left: 0;
+      bottom: -85px;
+      width: 30vw;
+    }
+
+    .text-container {
+      width: 80%;
+      max-width: 1009px;
+      text-align: right;
+
+      @media screen and (max-width: 1280px) {
+        width: 100%;
+      }
+
+      .highlighted {
+        font-family: $bold;
+        color: $orange;
+        font-size: 64px;
+        line-height: 81px;
+        transition: opacity 0.5s linear;
+        opacity: 0;
+
+        &.visible {
+          opacity: 1;
+        }
+
+        @media screen and (max-width: 1460px) {
+          font-size: 54px;
+          line-height: 68px;
+        }
+
+        @media screen and (max-width: 1280px) {
+          font-size: 44px;
+          line-height: 58px;
+        }
+
+        &.small {
+          font-size: 36px;
+          line-height: 46px;
+
+          @media screen and (max-width: 1280px) {
+            font-size: 30px;
+            line-height: 44px;
+          }
+        }
+      }
+
+      .regular-text {
+        font-size: 24px;
+        line-height: 30px;
+        color: $dark-grey;
+        font-family: $regular;
+        margin-top: -5px;
+
+        transition: opacity 0.5s linear;
+        opacity: 0;
+
+        &.visible {
+          opacity: 1;
+        }
+
+        @media screen and (max-width: 1460px) {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+  footer {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(92.98deg, #33383d 0%, #1c1d20 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .orientations {
+      width: 50%;
+      max-width: 930px;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      @include desktop(medium) {
+        width: 40%;
+        max-width: 420px;
+        padding-left: 24px;
+      }
+
+      @media screen and (max-width: 1024px) {
+        max-width: 320px;
+      }
+
+      p {
+        text-align: right;
+        max-width: 540px;
+        font-size: 12px;
+        color: $white;
+        font-family: $regular;
+      }
+
+      &:after {
+        width: 1px;
+        height: 61px;
+        background-color: $white;
+        position: absolute;
+        right: -35px;
+        top: 50%;
+        transform: translateY(-50%);
+        content: "";
+        display: block;
+      }
+    }
+
+    .timer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 143px;
+      margin-right: 48px;
+
+      @include desktop(medium) {
+        padding-left: 75px;
+      }
+
+      p {
+        font-size: 14px;
+        color: $white;
+        font-family: $regular;
+        text-align: right;
+      }
+
+      .counter {
+        width: 100px;
+        margin-left: 33px;
+
+        .counter-display {
+          color: $white;
+          font-size: 48px;
+          font-family: $bold;
+        }
+
+        .counter-text {
+          width: 100%;
+          text-align: center;
+          font-size: 14px;
+          color: $white;
+          font-family: $regular;
+          line-height: 18px;
+        }
+      }
+    }
+
+    .controls {
+      margin-left: auto;
+      width: 260px;
+      flex-wrap: wrap;
+      height: 100%;
+      display: flex;
+
+      @media screen and (max-width: 1024px) {
+        width: 200px;
+      }
+
+      a {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 15px;
+        transition: all 0.2s linear;
+
+        &:nth-child(1) {
+          font-size: 12px;
+          color: #c13216;
+          font-family: $regular;
+          background-color: $white;
+
+          &:hover {
+            background-color: #c13216;
+            color: $white;
+          }
+        }
+
+        &:nth-child(2) {
+          font-family: $bold;
+          font-size: 12px;
+          color: $white;
+
+          &:hover {
+            background-color: #c13216;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .home {
+    header {
+      padding: 44px 24px 8px;
+      width: 100%;
+      background-color: #fff;
+      position: fixed;
+      z-index: 2;
+
+      .calendar-widget {
+        position: absolute;
+        width: 100%;
+        right: 0;
+        top: 0;
+        flex-wrap: nowrap;
+        max-width: unset;
+        padding: 8px 24px;
+        background-color: $dark-grey;
+
+        .time {
+          font-size: 16px;
+          line-height: 1;
+          text-align: right;
+          order: 2;
+          width: 20%;
+          color: $white;
+        }
+
+        .calendar-text {
+          width: 100%;
+          text-align: left;
+          color: $white;
+        }
+      }
+
+      .weather-widget {
+        .location {
+          font-size: 12px;
+          text-align: right;
+        }
+
+        .weather-details {
+          margin-top: 0;
+
+          .weather-icon {
+            margin-top: -2px;
+          }
+
+          .temperature {
+            font-size: 36px;
+          }
+        }
+      }
+    }
+
+    .main {
+      padding: 120px 24px;
+      min-height: calc(100vh - 100px);
+
+      .home-logo {
+        bottom: -55px;
+      }
+
+      .text-container {
+        text-align: left;
+        width: 100%;
+
+        .highlighted {
+          font-size: 36px;
+          line-height: 1;
+          margin-bottom: 5px;
+
+          &.small {
+            font-size: 36px;
+            line-height: 1;
+          }
+        }
+
+        .regular-text {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+    footer {
+      height: auto;
+      flex-wrap: wrap;
+      padding: 24px;
+
+      .orientations {
+        width: 100%;
+        max-width: unset;
+        margin-bottom: 32px;
+
+        p {
+          max-width: unset;
+          text-align: center;
+          width: 100%;
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      .timer {
+        width: 50%;
+        margin: 0 auto 32px;
+        flex-wrap: wrap;
+        padding: 0;
+
+        p {
+          width: 100%;
+          text-align: center;
+          br {
+            display: none;
+          }
+        }
+
+        .counter {
+          width: 100%;
+          margin: 10px auto;
+        }
+      }
+
+      .controls {
+        margin: 0 auto;
+        height: 48px;
+        width: 100%;
+        justify-content: space-between;
+
+        a {
+          width: 49%;
+          &:nth-child(2) {
+            border: 1px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
