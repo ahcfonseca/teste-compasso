@@ -21,7 +21,7 @@
     "gulp-sourcemaps": "2.4.1",
     "gulp-strip-debug": "^1.1.0",
     "gulp-uglify": "2.1.2",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.1"
   },
   "dependencies": {
     "gulp-babel": "^8.0.0",
